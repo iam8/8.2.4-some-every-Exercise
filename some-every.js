@@ -19,14 +19,21 @@ function hasOddNumber(arr) {
 }
 
 /*
-Write a function called hasAZero which accepts a number and returns true if that number contains at least one zero. Otherwise, the function should return false
+Write a function called hasAZero which accepts a number and returns true if that number contains at
+least one zero. Otherwise, the function should return false
 
 Examples:
     hasAZero(3332123213101232321) // true
     hasAZero(1212121) // false
 */
 
-function hasAZero(num) {}
+function hasAZero(num) {
+
+    let digitsArr = num.toString().split("");
+    return digitsArr.some(function(digit, index, array) {
+        return digit === "0";
+    })
+}
 
 /*
 Write a function called hasOnlyOddNumbers which accepts an array and returns true if every single number in the array is odd. If any of the values in the array are not odd, the function should return false. 
