@@ -64,18 +64,24 @@ Examples:
 
 function hasNoDuplicates(arr) {
 
-    for (let i = 0; i < arr.length; i++) {
-        let arrCopy = arr.slice();  // Make copy of original array
-        arrCopy.splice(i, 1);  // Remove the current value from the copy
+    // My initial version of this function, before I learned of the 'lastIndexOf' array method
+    // for (let i = 0; i < arr.length; i++) {
+    //     let arrCopy = arr.slice();  // Make copy of original array
+    //     arrCopy.splice(i, 1);  // Remove the current value from the copy
 
-        let hasDuplicate = arrCopy.some(function(value, index, array) {
-            return value === arr[i];
-        })
+    //     let hasDuplicate = arrCopy.some(function(value, index, array) {
+    //         return value === arr[i];
+    //     })
 
-        if (hasDuplicate) return false;
-    }
+    //     if (hasDuplicate) return false;
+    // }
 
-    return true;
+    // return true;
+
+    // Solution version of this function
+    return arr.every(function(value, index, array) {
+        return arr.indexOf(value) === arr.lastIndexOf(value);
+    })
 
 }
 
@@ -98,7 +104,7 @@ Examples:
 function hasCertainKey(arr, key) {
 
     return arr.every(function(object, index, array) {
-        return object[key] !== undefined;
+        return key in object;
     })
 }
 
