@@ -1,3 +1,7 @@
+// Ioana Alex Mititean
+// 10/11/22
+// Unit 8.2.4: some, every Exercise
+
 /*
 Write a function called hasOddNumber which accepts an array and returns true if the array contains at least one odd number, otherwise it returns false.
 
