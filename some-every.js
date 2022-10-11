@@ -53,7 +53,9 @@ function hasOnlyOddNumbers(arr) {
 }
 
 /*
-Write a function called hasNoDuplicates which accepts an array and returns true if there are no duplicate values (more than one element in the array that has the same value as another). If there are any duplicates, the function should return false.
+Write a function called hasNoDuplicates which accepts an array and returns true if there are no
+duplicate values (more than one element in the array that has the same value as another). If there
+are any duplicates, the function should return false.
 
 Examples:
     hasNoDuplicates([1,2,3,1]) // false
@@ -62,6 +64,18 @@ Examples:
 
 function hasNoDuplicates(arr) {
 
+    for (let i = 0; i < arr.length; i++) {
+        let arrCopy = arr.slice();  // Make copy of original array
+        arrCopy.splice(i, 1);  // Remove the current value from the copy
+
+        let hasDuplicate = arrCopy.some(function(value, index, array) {
+            return value === arr[i];
+        })
+
+        if (hasDuplicate) return false;
+    }
+
+    return true;
 
 }
 
