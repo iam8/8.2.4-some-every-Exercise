@@ -78,7 +78,7 @@ function hasNoDuplicates(arr) {
 
     // return true;
 
-    // Solution version of this function
+    // Instructor solution version of this function
     return arr.every(function(value, index, array) {
         return arr.indexOf(value) === arr.lastIndexOf(value);
     })
